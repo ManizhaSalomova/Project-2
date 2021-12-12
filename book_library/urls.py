@@ -24,20 +24,20 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', obtain_jwt_token),
 
-    path('', views.user_list),
-    url(r'^api/users/$', views.user_list),
+    path('', views.user_list, ),
+    url(r'^api/users/$', views.user_list, name='list'),
     url(r'^api/users/(?P<pk>[0-9]+)$', views.getUser),
 
     path('authors/', views.author_list),
-    url(r'^api/authors/$', views.author_list),
+    url(r'^api/authors/$', views.author_list, name='author'),
     url(r'^api/authors/(?P<pk>[0-9]+)$', views.getAuthor),
 
     path('books/', views.book_list),
-    url(r'^api/books/$', views.book_list),
+    url(r'^api/books/$', views.book_list, name='book'),
     url(r'^api/books/(?P<pk>[0-9]+)$', views.getBook),
 
-    path('userbooks/', views.userbook_list),
-    url(r'^api/userbooks/$', views.userbook_list),
+    path('userbooks/', views.userbook_list ),
+    url(r'^api/userbooks/$', views.userbook_list, name='userbook'),
     url(r'^api/userbooks/(?P<pk>[0-9]+)$', views.getUserBook)
 
 ]
